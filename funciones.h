@@ -16,3 +16,5 @@ void registrarLibros(Datoslibro libros[], int *cantidad);
 void listaLibros(Datoslibro libros[], int cantidad);
 void buscarlibro(Datoslibro libros[], int cantidad);
 void eliminarlibro(Datoslibro libros[], int *cantidad,int id);
+void actualizarEstadoLibro(Datoslibro libros[], int cantidad);
+int esIDUnico(Datoslibro libros[], int cantidad, int id);

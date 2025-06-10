@@ -10,7 +10,7 @@ int main() {
 
     do {
         menu();
-        printf("Selecciona una opción: ");
+        printf("Selecciona una opcion: ");
         scanf("%d", &opcion);
         getchar(); 
 
@@ -29,16 +29,22 @@ int main() {
                 int indice;
                 printf("Ingrese el índice del libro a eliminar: ");
                 scanf("%d", &indice);
-                eliminarlibro(libros, &cantidad, indice);
+                getchar(); // Limpiar el buffer de entrada
+                eliminarlibro(libros, &cantidad, indice - 1); // Convertir a índice basado en 0
                 break;
             }
             case 5:
+                actualizarEstadoLibro(libros, cantidad);
+                break;
+            case 6:
                 printf("Saliendo...\n");
                 break;
             default:
-                printf("Opción inválida.\n");
+                printf("Opción inválida. Por favor, seleccione una opción entre 1 y 6.\n");
         }
 
-    } while (opcion != 5);
+    } while (opcion != 6);
 
+    return 0;
 }
+
